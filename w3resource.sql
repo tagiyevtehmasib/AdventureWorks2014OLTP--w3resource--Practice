@@ -465,9 +465,68 @@ CASE
 	LAG(SubTotal) OVER(ORDER BY OrderDate) 
 END
 FROM Sales.SalesOrderHeader
+
 -------------------------------------------------------------------------------------
 
+--Question 40
+SELECT pp.Name,
+ss.SalesOrderID
+FROM Production.Product pp
+JOIN Sales.SalesOrderDetail ss
+ON pp.ProductID = ss.ProductID
+ORDER BY pp.Name
 
+-------------------------------------------------------------------------------------
+
+--Question 41
+SELECT st.Name,
+sp.BusinessEntityID
+FROM Sales.SalesTerritory st
+RIGHT JOIN Sales.SalesPerson sp
+ON sp.TerritoryID = sp.TerritoryID
+WHERE st.TerritoryID IS NOT NULL OR st.TerritoryID IS NULL
+
+-------------------------------------------------------------------------------------
+
+--Question 42
+SELECT CONCAT_WS(' ,', pp.FirstName, pp.LastName),
+pa.City
+FROM Person.Person pp
+JOIN HumanResources.Employee he
+ON he.BusinessEntityID = pp.BusinessEntityID
+JOIN Person.BusinessEntityAddress bea
+ON bea.BusinessEntityID = he.BusinessEntityID
+JOIN Person.Address pa
+ON pa.AddressID = bea.AddressID
+ORDER BY pp.LastName, pp.FirstName
+
+-------------------------------------------------------------------------------------
+
+--Question 43
+SELECT BusinessEntityID,
+FirstName,
+LastName
+FROM Person.Person
+WHERE PersonType = 'IN' AND LastName = 'Adams'
+ORDER BY FirstName ASC
+
+-------------------------------------------------------------------------------------
+
+--Question 44
+SELECT BusinessEntityID,
+FirstName,
+LastName
+FROM Person.Person
+WHERE LastName LIKE 'Al%' AND FirstName LIKE 'M%' AND BusinessEntityID <= 1500
+
+-------------------------------------------------------------------------------------
+
+--Question 45
+SELECT ProductID,
+Name,
+Color
+FROM Production.Product
+WHERE Name IN('Blade', 'Crown Race', 'AWC Logo Cap')
 
 
 
