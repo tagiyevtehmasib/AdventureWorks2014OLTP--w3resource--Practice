@@ -528,6 +528,21 @@ Color
 FROM Production.Product
 WHERE Name IN('Blade', 'Crown Race', 'AWC Logo Cap')
 
+-------------------------------------------------------------------------------------
+
+--Question 45
+SELECT SalesOrderID,
+LineTotal,
+first_VALUE(LineTotal) OVER(PARTITION BY SalesOrderID ORDER BY LineTotal desc),
+LineTotal-FIRST_VALUE(LineTotal) OVER(PARTITION BY SalesOrderID ORDER BY LineTotal)
+FROM Sales.SalesOrderDetail
+
+SELECT SalesOrderID,
+LineTotal,
+LAST_VALUE(LineTotal) OVER(PARTITION BY SalesOrderID ORDER BY LineTotal
+ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)
+FROM Sales.SalesOrderDetail
+
 
 
 
