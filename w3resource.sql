@@ -545,7 +545,7 @@ FROM Sales.SalesOrderDetail
 
 -------------------------------------------------------------------------------------
 
---Question 46
+--General
 DROP VIEW IF EXISTS dbo.view_name
 
 EXEC sp_refreshview '[HumanResources].[vEmployee]'
@@ -561,6 +561,14 @@ SELECT OBJECT_DEFINITION(OBJECT_ID('[HumanResources].[vEmployeeDepartment]'))
 GRANT SELECT ON [HumanResources].[vEmployeeDepartment] TO UserName
 REVOKE SELECT ON dbo.v_Test FROM UserName
 DENY UPDATE ON dbo.v_Test TO UserName
+
+-----------------------
+SELECT ss.* FROM
+(SELECT UnitPrice AS unique_count,
+COUNT(UnitPrice) OVER(PARTITION BY UnitPrice) AS count_ofunit
+FROM Sales.SalesOrderDetail) AS ss
+WHERE ss.count_ofunit <= 1
+ORDER BY ss.unique_count ASC
 
 
 
