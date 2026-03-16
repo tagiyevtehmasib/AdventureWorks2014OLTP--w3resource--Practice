@@ -543,6 +543,29 @@ LAST_VALUE(LineTotal) OVER(PARTITION BY SalesOrderID ORDER BY LineTotal
 ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)
 FROM Sales.SalesOrderDetail
 
+-------------------------------------------------------------------------------------
+
+--Question 46
+DROP VIEW IF EXISTS dbo.view_name
+
+EXEC sp_refreshview '[HumanResources].[vEmployee]'
+
+SELECT *
+FROM sys.views
+WHERE name LIKE 'v%'
+
+EXEC sp_rename '[HumanResources].[vEmployee]', '[HumanResources].[vEmployeeLARR]'
+
+SELECT OBJECT_DEFINITION(OBJECT_ID('[HumanResources].[vEmployeeDepartment]'))
+
+GRANT SELECT ON [HumanResources].[vEmployeeDepartment] TO UserName
+REVOKE SELECT ON dbo.v_Test FROM UserName
+DENY UPDATE ON dbo.v_Test TO UserName
+
+
+
+
+
 
 
 
