@@ -571,7 +571,7 @@ WHERE ss.count_ofunit <= 1
 ORDER BY ss.unique_count ASC
 
 
-
+SELECT * FROM sys.indexes
 
 
 
