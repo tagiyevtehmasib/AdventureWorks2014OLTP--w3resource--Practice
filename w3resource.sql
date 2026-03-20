@@ -572,6 +572,36 @@ ORDER BY ss.unique_count ASC
 
 
 SELECT * FROM sys.indexes
+---------------------------------------------------------
+-- Stored Procedure
+--Easy Create
+CREATE PROCEDURE proc_salesline
+AS
+BEGIN
+	SELECT * FROM Sales.SalesOrderDetail
+END
+-------------------
+
+
+--Call
+EXEC proc_salesline
+-------------------
+
+-------------------
+DROP PROCEDURE proc_salesline
+-------------------
+
+-------------------------
+--Create with input value
+CREATE PROCEDURE proc_salesline
+	@LineValue DECIMAL(20,2)
+AS
+BEGIN
+	SELECT * FROM Sales.SalesOrderDetail
+	WHERE LineTotal = @LineValue
+END
+
+EXEC proc_salesline, @LineValue = 256
 
 
 
