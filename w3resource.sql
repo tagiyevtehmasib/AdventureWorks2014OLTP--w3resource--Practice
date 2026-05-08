@@ -311,7 +311,7 @@ ORDER BY YEAR(HireDate)
 SELECT LastName,
 FirstName
 FROM Person.Person
-WHERE LastName LIKE 'R%'
+WHERE LastName LIKE '%R'
 ORDER BY FirstName ASC, LastName DESC
 
 -------------------------------------------------------------------------------------
@@ -545,63 +545,7 @@ FROM Sales.SalesOrderDetail
 
 -------------------------------------------------------------------------------------
 
---General
-DROP VIEW IF EXISTS dbo.view_name
-
-EXEC sp_refreshview '[HumanResources].[vEmployee]'
-
-SELECT *
-FROM sys.views
-WHERE name LIKE 'v%'
-
-EXEC sp_rename '[HumanResources].[vEmployee]', '[HumanResources].[vEmployeeLARR]'
-
-SELECT OBJECT_DEFINITION(OBJECT_ID('[HumanResources].[vEmployeeDepartment]'))
-
-GRANT SELECT ON [HumanResources].[vEmployeeDepartment] TO UserName
-REVOKE SELECT ON dbo.v_Test FROM UserName
-DENY UPDATE ON dbo.v_Test TO UserName
-
------------------------
-SELECT ss.* FROM
-(SELECT UnitPrice AS unique_count,
-COUNT(UnitPrice) OVER(PARTITION BY UnitPrice) AS count_ofunit
-FROM Sales.SalesOrderDetail) AS ss
-WHERE ss.count_ofunit <= 1
-ORDER BY ss.unique_count ASC
-
-
-SELECT * FROM sys.indexes
----------------------------------------------------------
--- Stored Procedure
---Easy Create
-CREATE PROCEDURE proc_salesline
-AS
-BEGIN
-	SELECT * FROM Sales.SalesOrderDetail
-END
--------------------
-
-
---Call
-EXEC proc_salesline
--------------------
-
--------------------
-DROP PROCEDURE proc_salesline
--------------------
-
--------------------------
---Create with input value
-CREATE PROCEDURE proc_salesline
-	@LineValue DECIMAL(20,2)
-AS
-BEGIN
-	SELECT * FROM Sales.SalesOrderDetail
-	WHERE LineTotal = @LineValue
-END
-
-EXEC proc_salesline, @LineValue = 256
+--Question 46
 
 
 
