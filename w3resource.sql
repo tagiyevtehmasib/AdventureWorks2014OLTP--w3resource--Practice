@@ -612,7 +612,14 @@ WHERE (d.OrderQty > 5 OR d.UnitPriceDiscount < 1000) AND h.TotalDue >= 100
 -------------------------------------------------------------------------------------
 
 --Question 52
+SELECT Name,
+Color
+FROM Production.Product
+WHERE Name LIKE '%red%'
 
+-------------------------------------------------------------------------------------
+
+--Question 53
 
 
 
