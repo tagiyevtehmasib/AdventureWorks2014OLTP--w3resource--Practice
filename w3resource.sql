@@ -589,7 +589,12 @@ WHERE st.CountryRegionCode != 'US' AND pa.City LIKE 'PA%'
 -------------------------------------------------------------------------------------
 
 --Question 50
-
+SELECT JobTitle,
+HireDate
+FROM HumanResources.Employee
+ORDER BY HireDate DESC
+OFFSET 0 ROWS
+FETCH NEXT 20 ROWS ONLY
 
 
 
