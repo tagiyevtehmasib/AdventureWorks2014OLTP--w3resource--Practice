@@ -569,7 +569,13 @@ SELECT AVG(t.total_order) FROM
 -------------------------------------------------------------------------------------
 
 --Question 48
+SELECT * FROM Production.ProductPhoto
+WHERE LargePhotoFileName LIKE '%green%'
 
+
+-------------------------------------------------------------------------------------
+
+--Question 49
 
 
 
