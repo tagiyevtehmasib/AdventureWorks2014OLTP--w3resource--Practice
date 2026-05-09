@@ -620,6 +620,14 @@ WHERE Name LIKE '%red%'
 -------------------------------------------------------------------------------------
 
 --Question 53
+SELECT Name,
+ListPrice
+FROM Production.Product
+WHERE ListPrice = 80.99 AND Name LIKE '%Mountain%'
+
+-------------------------------------------------------------------------------------
+
+--Question 54
 
 
 
