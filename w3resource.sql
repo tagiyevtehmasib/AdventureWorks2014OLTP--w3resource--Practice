@@ -554,6 +554,22 @@ WHERE SalesPersonID IS NOT NULL
 GROUP BY SalesPersonID, YEAR(OrderDate)
 ORDER BY 1, 3
 
+-------------------------------------------------------------------------------------
+
+--Question 47
+SELECT AVG(t.total_order) FROM 
+(
+	SELECT SalesPersonID,
+	COUNT(*) AS total_order
+	FROM Sales.SalesOrderHeader
+	WHERE SalesPersonID IS NOT NULL
+	GROUP BY SalesPersonID
+) AS t
+
+-------------------------------------------------------------------------------------
+
+--Question 48
+
 
 
 
