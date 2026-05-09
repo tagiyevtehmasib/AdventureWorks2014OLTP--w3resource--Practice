@@ -576,6 +576,20 @@ WHERE LargePhotoFileName LIKE '%green%'
 -------------------------------------------------------------------------------------
 
 --Question 49
+SELECT pa.AddressLine1,
+pa.AddressLine2,
+pa.City,
+pa.PostalCode,
+st.CountryRegionCode
+FROM Person.StateProvince st 
+JOIN Person.Address pa
+ON pa.StateProvinceID = st.StateProvinceID
+WHERE st.CountryRegionCode != 'US' AND pa.City LIKE 'PA%'
+
+-------------------------------------------------------------------------------------
+
+--Question 50
+
 
 
 
