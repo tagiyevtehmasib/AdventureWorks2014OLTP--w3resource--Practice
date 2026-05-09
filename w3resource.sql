@@ -546,6 +546,63 @@ FROM Sales.SalesOrderDetail
 -------------------------------------------------------------------------------------
 
 --Question 46
+SELECT SalesPersonID,
+COUNT(YEAR(OrderDate)),
+YEAR(OrderDate)
+FROM Sales.SalesOrderHeader
+WHERE SalesPersonID IS NOT NULL
+GROUP BY SalesPersonID, YEAR(OrderDate)
+ORDER BY 1, 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
