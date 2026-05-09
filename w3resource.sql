@@ -596,6 +596,23 @@ ORDER BY HireDate DESC
 OFFSET 0 ROWS
 FETCH NEXT 20 ROWS ONLY
 
+SELECT TOP(20) JobTitle,
+HireDate
+FROM HumanResources.Employee
+ORDER BY HireDate DESC
+
+-------------------------------------------------------------------------------------
+
+--Question 51
+SELECT h.* FROM Sales.SalesOrderHeader h
+JOIN Sales.SalesOrderDetail d
+ON h.SalesOrderID = d.SalesOrderID
+WHERE (d.OrderQty > 5 OR d.UnitPriceDiscount < 1000) AND h.TotalDue >= 100
+
+-------------------------------------------------------------------------------------
+
+--Question 52
+
 
 
 
