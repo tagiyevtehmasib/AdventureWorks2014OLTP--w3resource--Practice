@@ -878,6 +878,19 @@ ListPrice
 FROM Production.Product
 WHERE Name LIKE 'Long-Sleeve Logo Jersey%'
 
+-------------------------------------------------------------------------------------
+
+--Question 84
+SELECT ProductID,
+UnitPrice,
+UnitPriceDiscount,
+UnitPrice * UnitPriceDiscount AS DiscountPrice 
+FROM Sales.SalesOrderDetail
+WHERE SalesOrderID = 46672 AND UnitPriceDiscount > 0.02
+
+-------------------------------------------------------------------------------------
+
+--Question 85
 
 
 
