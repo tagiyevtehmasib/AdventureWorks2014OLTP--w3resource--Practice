@@ -669,6 +669,15 @@ WHERE p.BusinessEntityID = 1
 -------------------------------------------------------------------------------------
 
 --Question 59
+SELECT Name,
+CHARINDEX('Yellow', Name) FROM Production.Product
+WHERE Name LIKE '%Yellow%'
+ORDER BY 2
+
+
+-------------------------------------------------------------------------------------
+
+--Question 60
 
 
 
