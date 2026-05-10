@@ -660,6 +660,15 @@ WHERE Name LIKE 'Chain %' OR Name = 'Chain' OR Name LIKE 'Full%' OR Name = 'Full
 -------------------------------------------------------------------------------------
 
 --Question 58
+SELECT CONCAT(p.FirstName,' ',p.LastName, ' ','¶', e.EmailAddress) AS [?column?]
+FROM Person.Person p 
+JOIN Person.EmailAddress e
+ON p.BusinessEntityID = e.BusinessEntityID
+WHERE p.BusinessEntityID = 1
+
+-------------------------------------------------------------------------------------
+
+--Question 59
 
 
 
