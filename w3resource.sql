@@ -770,7 +770,16 @@ CONCAT(RTRIM('text then five spaces     '), 'after space') AS [Trimmed Text(spac
 
 -------------------------------------------------------------------------------------
 
+--Question 72
+SELECT ProductNumber,
+Name
+FROM Production.Product
+WHERE Name LIKE '%, [S, M, L]'
+
+-------------------------------------------------------------------------------------
+
 --Question 73
+
 
 
 
