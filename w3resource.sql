@@ -685,6 +685,12 @@ FROM Production.Product
 -------------------------------------------------------------------------------------
 
 --Question 61
+SELECT CONCAT_WS(',', Name, ProductNumber, Color, '¶')
+FROM Production.Product
+
+-------------------------------------------------------------------------------------
+
+--Question 62
 
 
 
