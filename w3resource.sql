@@ -832,6 +832,18 @@ ORDER BY 1
 -------------------------------------------------------------------------------------
 
 --Question 79
+SELECT p.FirstName,
+p.LastName,
+p.Title,
+LEFT(CAST(e.SickLeaveHours AS VARCHAR(40)), 1)
+FROM HumanResources.Employee e
+JOIN Person.Person p 
+ON e.BusinessEntityID = p.BusinessEntityID
+WHERE NOT p.BusinessEntityID > 5
+
+-------------------------------------------------------------------------------------
+
+--Question 80
 
 
 
