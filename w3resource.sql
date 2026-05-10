@@ -636,6 +636,14 @@ WHERE Name LIKE '%Mountain%' OR Name LIKE '%Road%'
 -------------------------------------------------------------------------------------
 
 --Question 55
+SELECT Name,
+Color
+FROM Production.Product
+WHERE Name LIKE '%Mountain%' AND Name LIKE '%Black%'
+
+-------------------------------------------------------------------------------------
+
+--Question 56
 
 
 
