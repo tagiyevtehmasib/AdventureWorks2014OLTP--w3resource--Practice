@@ -802,6 +802,13 @@ JOIN Person.EmailAddress ea
 ON ea.BusinessEntityID = be.BusinessEntityID
 GROUP BY ad.City
 
+-------------------------------------------------------------------------------------
+
+--Question 76
+SELECT JobTitle AS [Originl Jobtitle],
+REPLACE(JobTitle, 'Supervisor', 'Assitant')
+FROM HumanResources.Employee
+WHERE JobTitle LIKE '%Supervisor%'
 
 
 
