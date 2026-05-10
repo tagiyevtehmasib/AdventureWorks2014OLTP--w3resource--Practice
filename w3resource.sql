@@ -825,6 +825,14 @@ WHERE he.JobTitle LIKE 'Sales%'
 -------------------------------------------------------------------------------------
 
 --Question 78
+SELECT CONCAT_WS(', ',UPPER(TRIM(' ' FROM LastName)), FirstName)
+FROM Person.Person
+ORDER BY 1
+
+-------------------------------------------------------------------------------------
+
+--Question 79
+
 
 
 
