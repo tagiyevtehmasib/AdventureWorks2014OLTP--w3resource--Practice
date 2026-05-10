@@ -706,7 +706,18 @@ ORDER BY 1
 -------------------------------------------------------------------------------------
 
 --Question 64
+SELECT LEN(c.FirstName),
+c.FirstName,
+c.LastName
+FROM Sales.vStoreWithContacts c
+JOIN Sales.vStoreWithAddresses a
+ON c.BusinessEntityID = a.BusinessEntityID
+WHERE a.CountryRegionName = 'Australia'
+ORDER BY 1, 2
 
+-------------------------------------------------------------------------------------
+
+--Question 65
 
 
 
