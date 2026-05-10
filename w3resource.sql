@@ -786,6 +786,13 @@ WHERE BusinessEntityID < 37
 -------------------------------------------------------------------------------------
 
 --Question 74
+SELECT STRING_AGG(CONCAT_WS(' ', FirstName, LastName, CAST(ModifiedDate AS datetime2(0))), ',')
+FROM Person.Person
+WHERE BusinessEntityID < 8
+
+-------------------------------------------------------------------------------------
+
+--Question 75
 
 
 
