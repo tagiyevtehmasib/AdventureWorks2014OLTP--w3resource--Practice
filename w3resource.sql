@@ -726,6 +726,15 @@ WHERE StandardCost BETWEEN 1000.00 AND 1220.00
 -------------------------------------------------------------------------------------
 
 --Question 66
+SELECT '     five space then the text' AS [Original Text],
+LTRIM('     five space then the text') AS [Trimmed Text(space removed)]
+
+
+-------------------------------------------------------------------------------------
+
+--Question 67
+
+
 
 
 
