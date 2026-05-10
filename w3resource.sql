@@ -810,7 +810,21 @@ REPLACE(JobTitle, 'Supervisor', 'Assitant')
 FROM HumanResources.Employee
 WHERE JobTitle LIKE '%Supervisor%'
 
+-------------------------------------------------------------------------------------
 
+--Question 77
+SELECT pp.FirstName,
+pp.MiddleName,
+pp.LastName,
+he.JobTitle
+FROM Person.Person pp
+JOIN HumanResources.Employee he
+ON he.BusinessEntityID = pp.BusinessEntityID
+WHERE he.JobTitle LIKE 'Sales%'
+
+-------------------------------------------------------------------------------------
+
+--Question 78
 
 
 
