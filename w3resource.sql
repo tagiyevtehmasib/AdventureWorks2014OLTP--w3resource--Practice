@@ -740,7 +740,14 @@ WHERE ProductNumber LIKE 'HN%'
 -------------------------------------------------------------------------------------
 
 --Question 68
+SELECT Name,
+CONCAT(REPLICATE('0', 4), ProductLine)
+FROM Production.Product
+WHERE ProductLine = 'T'
 
+-------------------------------------------------------------------------------------
+
+--Question 69
 
 
 
