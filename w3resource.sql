@@ -1,6 +1,6 @@
 
 --W3Resource All Tasks
-
+USE AdventureWorks2014
 
 --Question 1
 SELECT * FROM HumanResources.Employee
@@ -628,7 +628,14 @@ WHERE ListPrice = 80.99 AND Name LIKE '%Mountain%'
 -------------------------------------------------------------------------------------
 
 --Question 54
+SELECT Name,
+Color
+FROM Production.Product
+WHERE Name LIKE '%Mountain%' OR Name LIKE '%Road%'
 
+-------------------------------------------------------------------------------------
+
+--Question 55
 
 
 
