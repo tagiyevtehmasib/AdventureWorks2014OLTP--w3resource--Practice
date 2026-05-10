@@ -844,7 +844,15 @@ WHERE NOT p.BusinessEntityID > 5
 -------------------------------------------------------------------------------------
 
 --Question 80
+SELECT Name,
+ListPrice
+FROM Production.Product
+WHERE CAST(ListPrice AS VARCHAR(30)) LIKE '33%'
 
+
+-------------------------------------------------------------------------------------
+
+--Question 81
 
 
 
