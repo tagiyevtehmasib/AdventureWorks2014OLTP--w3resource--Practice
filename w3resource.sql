@@ -649,6 +649,18 @@ Color
 FROM Production.Product 
 WHERE Name LIKE '%Chain %' OR Name = 'Chain'
 
+-------------------------------------------------------------------------------------
+
+--Question 57
+SELECT Name,
+Color
+FROM Production.Product
+WHERE Name LIKE 'Chain %' OR Name = 'Chain' OR Name LIKE 'Full%' OR Name = 'Full'
+
+-------------------------------------------------------------------------------------
+
+--Question 58
+
 
 
 
