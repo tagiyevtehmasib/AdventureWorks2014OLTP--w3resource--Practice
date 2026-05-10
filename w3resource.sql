@@ -861,6 +861,14 @@ WHERE CommissionPct <> 0
 -------------------------------------------------------------------------------------
 
 --Question 82
+SELECT p.FirstName,
+p.LastName,
+s.SalesYTD,
+p.BusinessEntityID
+FROM Person.Person p
+JOIN Sales.SalesPerson s
+ON p.BusinessEntityID = s.BusinessEntityID
+WHERE CAST(s.SalesYTD AS VARCHAR(50)) LIKE '2%'
 
 
 
