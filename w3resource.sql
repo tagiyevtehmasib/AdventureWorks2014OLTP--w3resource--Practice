@@ -849,10 +849,18 @@ ListPrice
 FROM Production.Product
 WHERE CAST(ListPrice AS VARCHAR(30)) LIKE '33%'
 
-
 -------------------------------------------------------------------------------------
 
 --Question 81
+SELECT SalesYTD,
+CommissionPct,
+ROUND(SalesYTD / CommissionPct, 0)
+FROM Sales.SalesPerson
+WHERE CommissionPct <> 0
+
+-------------------------------------------------------------------------------------
+
+--Question 82
 
 
 
