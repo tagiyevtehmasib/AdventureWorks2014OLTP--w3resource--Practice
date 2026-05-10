@@ -891,6 +891,15 @@ WHERE SalesOrderID = 46672 AND UnitPriceDiscount > 0.02
 -------------------------------------------------------------------------------------
 
 --Question 85
+SELECT AVG(VacationHours),
+SUM(SickLeaveHours)
+FROM HumanResources.Employee
+WHERE JobTitle LIKE 'Vice President%'
+
+-------------------------------------------------------------------------------------
+
+--Question 86
+
 
 
 
