@@ -696,7 +696,16 @@ SELECT LEFT(Name, 5) FROM Production.Product
 -------------------------------------------------------------------------------------
 
 --Question 63
+SELECT LEN(FirstName),
+FirstName,
+LastName
+FROM Sales.vIndividualCustomer
+WHERE CountryRegionName = 'Australia'
+ORDER BY 1
 
+-------------------------------------------------------------------------------------
+
+--Question 64
 
 
 
