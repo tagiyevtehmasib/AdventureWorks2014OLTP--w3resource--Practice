@@ -762,6 +762,16 @@ RIGHT(Name, 8)
 FROM Production.Product
 ORDER BY 2
 
+-------------------------------------------------------------------------------------
+
+--Question 71
+SELECT CONCAT('text then five spaces     ', 'after space') AS [Original Text],
+CONCAT(RTRIM('text then five spaces     '), 'after space') AS [Trimmed Text(space removed)]
+
+-------------------------------------------------------------------------------------
+
+--Question 73
+
 
 
 
