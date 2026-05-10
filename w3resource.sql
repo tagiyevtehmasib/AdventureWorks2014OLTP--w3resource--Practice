@@ -733,6 +733,13 @@ LTRIM('     five space then the text') AS [Trimmed Text(space removed)]
 -------------------------------------------------------------------------------------
 
 --Question 67
+SELECT ProductNumber,
+SUBSTRING(ProductNumber, 3, LEN(ProductNumber)) FROM Production.Product
+WHERE ProductNumber LIKE 'HN%'
+
+-------------------------------------------------------------------------------------
+
+--Question 68
 
 
 
