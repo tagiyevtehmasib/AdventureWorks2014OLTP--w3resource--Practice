@@ -748,7 +748,14 @@ WHERE ProductLine = 'T'
 -------------------------------------------------------------------------------------
 
 --Question 69
+SELECT FirstName,
+REVERSE(FirstName) FROM Person.Person
+WHERE BusinessEntityID < 6
+ORDER BY 1
 
+-------------------------------------------------------------------------------------
+
+--Question 70
 
 
 
