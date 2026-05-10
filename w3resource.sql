@@ -678,6 +678,13 @@ ORDER BY 2
 -------------------------------------------------------------------------------------
 
 --Question 60
+SELECT CONCAT_WS(' ', Name,'color : - ', Color, 'Product Number: ',ProductNumber),
+Color
+FROM Production.Product
+
+-------------------------------------------------------------------------------------
+
+--Question 61
 
 
 
