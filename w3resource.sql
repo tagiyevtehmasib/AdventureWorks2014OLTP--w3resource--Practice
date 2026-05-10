@@ -756,6 +756,13 @@ ORDER BY 1
 -------------------------------------------------------------------------------------
 
 --Question 70
+SELECT Name,
+ProductNumber,
+RIGHT(Name, 8)
+FROM Production.Product
+ORDER BY 2
+
+
 
 
 
