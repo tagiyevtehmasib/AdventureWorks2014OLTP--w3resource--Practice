@@ -793,8 +793,14 @@ WHERE BusinessEntityID < 8
 -------------------------------------------------------------------------------------
 
 --Question 75
-
-
+SELECT TOP(10) ad.City,
+STRING_AGG(CAST(ea.EmailAddress AS VARCHAR(MAX)), ' ;')
+FROM Person.BusinessEntityAddress be
+JOIN Person.Address ad
+ON be.AddressID = ad.AddressID
+JOIN Person.EmailAddress ea
+ON ea.BusinessEntityID = be.BusinessEntityID
+GROUP BY ad.City
 
 
 
