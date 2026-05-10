@@ -870,6 +870,13 @@ JOIN Sales.SalesPerson s
 ON p.BusinessEntityID = s.BusinessEntityID
 WHERE CAST(s.SalesYTD AS VARCHAR(50)) LIKE '2%'
 
+-------------------------------------------------------------------------------------
+
+--Question 83
+SELECT CAST(Name AS CHAR(16)),
+ListPrice
+FROM Production.Product
+WHERE Name LIKE 'Long-Sleeve Logo Jersey%'
 
 
 
