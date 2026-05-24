@@ -942,6 +942,10 @@ ORDER BY 3
 --Question 90
 SELECT COUNT(DISTINCT JobTitle) FROM HumanResources.Employee
 
+-------------------------------------------------------------------------------------
+
+--Question 91
+SELECT COUNT(BusinessEntityID) FROM HumanResources.Employee
 
 
 
