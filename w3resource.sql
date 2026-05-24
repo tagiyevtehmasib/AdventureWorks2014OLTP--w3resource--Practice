@@ -947,6 +947,13 @@ SELECT COUNT(DISTINCT JobTitle) FROM HumanResources.Employee
 --Question 91
 SELECT COUNT(BusinessEntityID) FROM HumanResources.Employee
 
+-------------------------------------------------------------------------------------
+
+--Question 92
+SELECT COUNT(BusinessEntityID),
+AVG(Bonus)
+FROM Sales.SalesPerson
+WHERE SalesQuota > 25000
 
 
 
