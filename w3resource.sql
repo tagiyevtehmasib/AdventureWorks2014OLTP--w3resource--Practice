@@ -905,6 +905,11 @@ SUM(SalesLastYear)
 FROM Sales.SalesPerson
 GROUP BY TerritoryID
 
+-------------------------------------------------------------------------------------
+
+--Question 87
+SELECT AVG(DISTINCT ListPrice)
+FROM Production.Product
 
 
 
