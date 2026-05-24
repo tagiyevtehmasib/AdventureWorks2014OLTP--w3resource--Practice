@@ -911,10 +911,18 @@ GROUP BY TerritoryID
 SELECT AVG(DISTINCT ListPrice)
 FROM Production.Product
 
+-------------------------------------------------------------------------------------
 
-
-
-
+--Question 88
+SELECT BusinessEntityID,
+TerritoryID,
+YEAR(ModifiedDate),
+SalesYTD,
+AVG(SalesYTD) OVER(PARTITION BY TerritoryID ORDER BY SalesYTD) AS MovingAvg,
+SUM(SalesYTD) OVER(PARTITION BY TerritoryID ORDER BY SalesYTD) AS CumulativeTotal
+FROM Sales.SalesPerson
+WHERE TerritoryID IS NULL OR TerritoryID < 5
+ORDER BY 2, 3
 
 
 
