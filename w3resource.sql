@@ -924,6 +924,20 @@ FROM Sales.SalesPerson
 WHERE TerritoryID IS NULL OR TerritoryID < 5
 ORDER BY 2, 3
 
+-------------------------------------------------------------------------------------
+
+--Question 89
+SELECT BusinessEntityID,
+TerritoryID,
+DATEPART(YEAR, ModifiedDate) AS SalesYear,
+SalesYTD,
+AVG(SalesYTD) OVER(PARTITION BY DATEPART(YEAR, ModifiedDate) ORDER BY SalesYTD) AS _movingAvg,
+SUM(SalesYTD) OVER(PARTITION BY DATEPART(YEAR, ModifiedDate) ORDER BY SalesYTD) AS _cumulativeSum
+FROM Sales.SalesPerson
+WHERE TerritoryID IS NULL OR TerritoryID < 5
+ORDER BY 3
+
+
 
 
 
