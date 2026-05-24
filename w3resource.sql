@@ -937,6 +937,10 @@ FROM Sales.SalesPerson
 WHERE TerritoryID IS NULL OR TerritoryID < 5
 ORDER BY 3
 
+-------------------------------------------------------------------------------------
+
+--Question 90
+SELECT COUNT(DISTINCT JobTitle) FROM HumanResources.Employee
 
 
 
