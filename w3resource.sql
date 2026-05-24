@@ -971,7 +971,71 @@ ON d.DepartmentID = dh.DepartmentID
 WHERE dh.EndDate IS NULL
 GROUP BY d.Name
 
+-------------------------------------------------------------------------------------
 
+--Question 94
+SELECT JobTitle,
+COUNT(BusinessEntityID)
+FROM HumanResources.Employee
+GROUP BY JobTitle
+HAVING COUNT(BusinessEntityID) > 15
+
+-------------------------------------------------------------------------------------
+
+--Question 95
+SELECT SalesOrderID,
+COUNT(ProductID)
+FROM Sales.SalesOrderDetail
+WHERE SalesOrderid IN (45363,45365)
+GROUP BY SalesOrderID
+
+-------------------------------------------------------------------------------------
+
+--Question 96
+SELECT
+    YEAR(QuotaDate) AS SalesYear,
+    DATEPART(QUARTER, QuotaDate) AS Quarter,
+    SalesQuota,
+    VAR(SalesQuota) OVER
+    (
+        ORDER BY YEAR(QuotaDate), DATEPART(QUARTER, QuotaDate)
+    ) AS Variance
+FROM Sales.SalesPersonQuotaHistory
+WHERE BusinessEntityID = 277 AND YEAR(QuotaDate) = 2012 
+
+-------------------------------------------------------------------------------------
+
+--Question 97
+SELECT VARP(DISTINCT SalesQuota),
+VAR(SalesQuota)
+FROM Sales.SalesPersonQuotaHistory
+
+-------------------------------------------------------------------------------------
+
+--Question 98
+SELECT Color,
+SUM(ListPrice),
+SUM(StandardCost)
+FROM Production.Product
+WHERE Name LIKE 'Mountain%' AND ListPrice > 0
+GROUP BY Color
+
+-------------------------------------------------------------------------------------
+
+--Question 99
+SELECT SalesQuota,
+SUM(SalesYTD)
+FROM Sales.SalesPerson
+GROUP BY ROLLUP(SalesQuota)
+
+-------------------------------------------------------------------------------------
+
+--Question 100
+SELECT Color,
+SUM(ListPrice),
+SUM(StandardCost)
+FROM Production.Product
+GROUP BY Color
 
 
 
