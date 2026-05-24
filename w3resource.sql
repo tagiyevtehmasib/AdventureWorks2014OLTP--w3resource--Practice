@@ -955,8 +955,21 @@ AVG(Bonus)
 FROM Sales.SalesPerson
 WHERE SalesQuota > 25000
 
+-------------------------------------------------------------------------------------
 
-
+--Question 93
+SELECT d.Name,
+MIN(ph.Rate) AS MinSalary,
+MAX(ph.Rate) AS MaxSalary ,
+AVG(ph.Rate) AS AvgSalary,
+COUNT(ph.BusinessEntityID) AS EmployeesPerDept  
+FROM HumanResources.EmployeePayHistory ph
+JOIN HumanResources.EmployeeDepartmentHistory dh
+ON ph.BusinessEntityID = dh.BusinessEntityID
+JOIN HumanResources.Department d
+ON d.DepartmentID = dh.DepartmentID
+WHERE dh.EndDate IS NULL
+GROUP BY d.Name
 
 
 
