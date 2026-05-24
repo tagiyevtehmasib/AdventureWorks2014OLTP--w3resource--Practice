@@ -899,6 +899,37 @@ WHERE JobTitle LIKE 'Vice President%'
 -------------------------------------------------------------------------------------
 
 --Question 86
+SELECT TerritoryID,
+AVG(Bonus),
+SUM(SalesLastYear)
+FROM Sales.SalesPerson
+GROUP BY TerritoryID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
